@@ -1,19 +1,19 @@
 {
-  "name": "@veterancrowd/wrapped-queue",
+  "name": "@veterancrowd/wrapped-sqs-client",
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VeteranCrowd/wrapped-queue"
+    "url": "https://github.com/VeteranCrowd/wrapped-sqs-client"
   },
   "author": "Jason G. Williscroft",
   "bugs": {
-    "url": "https://github.com/VeteranCrowd/wrapped-queue/issues"
+    "url": "https://github.com/VeteranCrowd/wrapped-sqs-client/issues"
   },
-  "description": "An AWS SQS queue wrapped to provide consistent logging and other services.",
-  "homepage": "https://github.com/VeteranCrowd/wrapped-queue#readme",
+  "description": "An AWS SQS client wrapped to provide consistent logging and other services.",
+  "homepage": "https://github.com/VeteranCrowd/wrapped-sqs-client#readme",
   "keywords": [],
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.267.0",
@@ -39,7 +39,8 @@
     "jsdoc-to-markdown": "^8.0.0",
     "mocha": "^10.2.0",
     "prettier": "^2.8.4",
-    "release-it": "^15.6.0"
+    "release-it": "^15.6.0",
+    "uuid": "^9.0.0"
   },
   "exports": {
     ".": {
@@ -53,6 +54,7 @@
       "./dist/**",
       "./node_modules/**"
     ],
+    "file": "./test-setup.js",
     "require": [
       "@babel/register"
     ],

@@ -16,5 +16,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["mocha", "promise"]
+  "plugins": ["mocha", "promise"],
+  "rules": { "mocha/no-top-level-hooks": "off" }
 }
