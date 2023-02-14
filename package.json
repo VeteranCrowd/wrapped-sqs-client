@@ -1,6 +1,6 @@
 {
   "name": "@veterancrowd/wrapped-sqs-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publishConfig": {
     "access": "public"
   },
