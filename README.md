@@ -27,7 +27,7 @@ This package wraps the [SQS Client - AWS SDK for JavaScript v3](https://docs.aws
                 * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
                 * [.encodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.encodeMessageAttributes) ⇒ <code>EncodedMessageAttributes</code>
     * _inner_
-        * [~defaultSQSClientConfig](#module_WrappedSqsClient..defaultSQSClientConfig) : <code>SQSClientConfig</code>
+        * [~defaultClientConfig](#module_WrappedSqsClient..defaultClientConfig) : <code>SQSClientConfig</code>
         * [~DecodedMessageAttributes](#module_WrappedSqsClient..DecodedMessageAttributes) : <code>Object.&lt;string, (string\|number)&gt;</code>
         * [~EncodedMessageAttributes](#module_WrappedSqsClient..EncodedMessageAttributes) : <code>Object.&lt;string, MessageAttributeValue&gt;</code>
 
@@ -195,9 +195,9 @@ Encode message attributes for SQS.
 | --- | --- | --- |
 | attributes | <code>DecodedMessageAttributes</code> | Decoded message attributes. |
 
-<a name="module_WrappedSqsClient..defaultSQSClientConfig"></a>
+<a name="module_WrappedSqsClient..defaultClientConfig"></a>
 
-### WrappedSqsClient~defaultSQSClientConfig : <code>SQSClientConfig</code>
+### WrappedSqsClient~defaultClientConfig : <code>SQSClientConfig</code>
 **Kind**: inner constant of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient)  
 <a name="module_WrappedSqsClient..DecodedMessageAttributes"></a>
 
