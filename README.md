@@ -65,7 +65,7 @@ WrappedSqsClient constructor.
 | --- | --- | --- |
 | [options] | <code>object</code> | Options. |
 | [options.logger] | <code>object</code> | Logger instance (default is [global console object](https://nodejs.org/api/console.html#class-console)). Must have info, error & debug methods |
-| [options.logInternals] | <code>boolean</code> | Log SQS client internals (default is false). |
+| [options.logInternals] | <code>boolean</code> | Log AWS client internals (default is false). |
 | [options.config] | <code>SQSClientConfig</code> | [SQSClientConfig](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sqsclientconfig.html). |
 
 <a name="module_WrappedSqsClient.WrappedSqsClient+queueInitialized"></a>
