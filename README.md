@@ -24,6 +24,7 @@ This package wraps the [SQS Client - AWS SDK for JavaScript v3](https://docs.aws
                 * [.receiveMessages([options])](#module_WrappedSqsClient.WrappedSqsClient+receiveMessages) ⇒ <code>Promise.&lt;Array.&lt;{messageId: string, body: any, attributes: Object.&lt;string, string&gt;}&gt;&gt;</code>
                 * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage)
             * _static_
+                * [.decodeMessage([message])](#module_WrappedSqsClient.WrappedSqsClient.decodeMessage) ⇒ <code>object</code>
                 * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
                 * [.encodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.encodeMessageAttributes) ⇒ <code>EncodedMessageAttributes</code>
     * _inner_
@@ -52,6 +53,7 @@ Wraps an AWS SQS client to provide standard logging & services.
         * [.receiveMessages([options])](#module_WrappedSqsClient.WrappedSqsClient+receiveMessages) ⇒ <code>Promise.&lt;Array.&lt;{messageId: string, body: any, attributes: Object.&lt;string, string&gt;}&gt;&gt;</code>
         * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage)
     * _static_
+        * [.decodeMessage([message])](#module_WrappedSqsClient.WrappedSqsClient.decodeMessage) ⇒ <code>object</code>
         * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
         * [.encodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.encodeMessageAttributes) ⇒ <code>EncodedMessageAttributes</code>
 
@@ -170,6 +172,21 @@ Sends a message.
 | [options.deduplicationId] | <code>string</code> | [SendMessageCommandInput messageDeduplicationId](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagededuplicationid) |
 | [options.groupId] | <code>string</code> | [SendMessageCommandInput messageGroupId](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagegroupid) |
 | [options.systemAttributes] | <code>DecodedMessageAttributes</code> | [SendMessageCommandInput messageSystemAttributes](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagesystemattributes) |
+
+<a name="module_WrappedSqsClient.WrappedSqsClient.decodeMessage"></a>
+
+#### WrappedSqsClient.decodeMessage([message]) ⇒ <code>object</code>
+Decode message from SQS.
+
+**Kind**: static method of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient.WrappedSqsClient)  
+**Returns**: <code>object</code> - Decoded message.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [message] | <code>object</code> | Encoded message. |
+| [message.MessageId] | <code>string</code> | Message id. |
+| [message.Body] | <code>string</code> | Stringified message body. |
+| [message.MessageAttributes] | <code>string</code> | Encoded message attributes. |
 
 <a name="module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes"></a>
 
