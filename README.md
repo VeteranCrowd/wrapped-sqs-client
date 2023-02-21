@@ -184,9 +184,6 @@ Decode message from SQS.
 | Param | Type | Description |
 | --- | --- | --- |
 | [message] | <code>object</code> | Encoded message. |
-| [message.MessageId] | <code>string</code> | Message id. |
-| [message.Body] | <code>string</code> | Stringified message body. |
-| [message.MessageAttributes] | <code>string</code> | Encoded message attributes. |
 
 <a name="module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes"></a>
 
