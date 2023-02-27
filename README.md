@@ -18,6 +18,7 @@ This package wraps the [SQS Client - AWS SDK for JavaScript v3](https://docs.aws
                 * [.queueUrl](#module_WrappedSqsClient.WrappedSqsClient+queueUrl) ⇒ <code>string</code>
                 * [.createQueue(queueName, [attributes], [tags])](#module_WrappedSqsClient.WrappedSqsClient+createQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
                 * [.deleteQueue()](#module_WrappedSqsClient.WrappedSqsClient+deleteQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
+                * [.deleteMessageBatch(messages)](#module_WrappedSqsClient.WrappedSqsClient+deleteMessageBatch) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
                 * [.getQueue(queueName)](#module_WrappedSqsClient.WrappedSqsClient+getQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
                 * [.purgeQueue()](#module_WrappedSqsClient.WrappedSqsClient+purgeQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
                 * [.queueExists(queueName)](#module_WrappedSqsClient.WrappedSqsClient+queueExists) ⇒ <code>Promise.&lt;boolean&gt;</code>
@@ -49,6 +50,7 @@ Wraps an AWS SQS client to provide standard logging & services.
         * [.queueUrl](#module_WrappedSqsClient.WrappedSqsClient+queueUrl) ⇒ <code>string</code>
         * [.createQueue(queueName, [attributes], [tags])](#module_WrappedSqsClient.WrappedSqsClient+createQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
         * [.deleteQueue()](#module_WrappedSqsClient.WrappedSqsClient+deleteQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
+        * [.deleteMessageBatch(messages)](#module_WrappedSqsClient.WrappedSqsClient+deleteMessageBatch) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
         * [.getQueue(queueName)](#module_WrappedSqsClient.WrappedSqsClient+getQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
         * [.purgeQueue()](#module_WrappedSqsClient.WrappedSqsClient+purgeQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
         * [.queueExists(queueName)](#module_WrappedSqsClient.WrappedSqsClient+queueExists) ⇒ <code>Promise.&lt;boolean&gt;</code>
@@ -115,6 +117,18 @@ Deletes a queue.
 
 **Kind**: instance method of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient.WrappedSqsClient)  
 **Returns**: <code>Promise.&lt;WrappedSqsClient&gt;</code> - [WrappedSqsClient](WrappedSqsClient) instance.  
+<a name="module_WrappedSqsClient.WrappedSqsClient+deleteMessageBatch"></a>
+
+#### wrappedSqsClient.deleteMessageBatch(messages) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
+Deletes a message batch.
+
+**Kind**: instance method of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient.WrappedSqsClient)  
+**Returns**: <code>Promise.&lt;WrappedSqsClient&gt;</code> - [WrappedSqsClient](WrappedSqsClient) instance.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| messages | <code>Array.&lt;object&gt;</code> | Messages to delete. |
+
 <a name="module_WrappedSqsClient.WrappedSqsClient+getQueue"></a>
 
 #### wrappedSqsClient.getQueue(queueName) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
