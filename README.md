@@ -23,6 +23,7 @@ This package wraps the [SQS Client - AWS SDK for JavaScript v3](https://docs.aws
                 * [.queueExists(queueName)](#module_WrappedSqsClient.WrappedSqsClient+queueExists) ⇒ <code>Promise.&lt;boolean&gt;</code>
                 * [.receiveMessages([options])](#module_WrappedSqsClient.WrappedSqsClient+receiveMessages) ⇒ <code>Promise.&lt;Array.&lt;{messageId: string, body: any, attributes: Object.&lt;string, string&gt;}&gt;&gt;</code>
                 * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage)
+                * [.sendMessageBatch(entries)](#module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch)
             * _static_
                 * [.decodeMessage([message])](#module_WrappedSqsClient.WrappedSqsClient.decodeMessage) ⇒ <code>object</code>
                 * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
@@ -31,6 +32,7 @@ This package wraps the [SQS Client - AWS SDK for JavaScript v3](https://docs.aws
         * [~defaultClientConfig](#module_WrappedSqsClient..defaultClientConfig) : <code>SQSClientConfig</code>
         * [~DecodedMessageAttributes](#module_WrappedSqsClient..DecodedMessageAttributes) : <code>Object.&lt;string, (string\|number)&gt;</code>
         * [~EncodedMessageAttributes](#module_WrappedSqsClient..EncodedMessageAttributes) : <code>Object.&lt;string, MessageAttributeValue&gt;</code>
+        * [~SendMessageBatchRequestEntry](#module_WrappedSqsClient..SendMessageBatchRequestEntry) : <code>object</code>
 
 <a name="module_WrappedSqsClient.WrappedSqsClient"></a>
 
@@ -52,6 +54,7 @@ Wraps an AWS SQS client to provide standard logging & services.
         * [.queueExists(queueName)](#module_WrappedSqsClient.WrappedSqsClient+queueExists) ⇒ <code>Promise.&lt;boolean&gt;</code>
         * [.receiveMessages([options])](#module_WrappedSqsClient.WrappedSqsClient+receiveMessages) ⇒ <code>Promise.&lt;Array.&lt;{messageId: string, body: any, attributes: Object.&lt;string, string&gt;}&gt;&gt;</code>
         * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage)
+        * [.sendMessageBatch(entries)](#module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch)
     * _static_
         * [.decodeMessage([message])](#module_WrappedSqsClient.WrappedSqsClient.decodeMessage) ⇒ <code>object</code>
         * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
@@ -166,12 +169,23 @@ Sends a message.
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | Options. |
-| [options.delaySeconds] | <code>number</code> | Delay in seconds. |
 | [options.attributes] | <code>DecodedMessageAttributes</code> | [Message attributes.](DecodedMessageAttributes) |
 | options.body | <code>\*</code> | [SendMessageCommandInput messageBody](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagebody). Must be a string or a JSON-serializable object. |
 | [options.deduplicationId] | <code>string</code> | [SendMessageCommandInput messageDeduplicationId](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagededuplicationid) |
+| [options.delaySeconds] | <code>number</code> | Delay in seconds. |
 | [options.groupId] | <code>string</code> | [SendMessageCommandInput messageGroupId](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagegroupid) |
 | [options.systemAttributes] | <code>DecodedMessageAttributes</code> | [SendMessageCommandInput messageSystemAttributes](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagesystemattributes) |
+
+<a name="module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch"></a>
+
+#### wrappedSqsClient.sendMessageBatch(entries)
+Sends a message.
+
+**Kind**: instance method of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient.WrappedSqsClient)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entries | <code>Array.&lt;SendMessageBatchRequestEntry&gt;</code> | Entries. |
 
 <a name="module_WrappedSqsClient.WrappedSqsClient.decodeMessage"></a>
 
@@ -221,6 +235,26 @@ Encode message attributes for SQS.
 
 ### WrappedSqsClient~EncodedMessageAttributes : <code>Object.&lt;string, MessageAttributeValue&gt;</code>
 **Kind**: inner typedef of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient)  
+<a name="module_WrappedSqsClient..SendMessageBatchRequestEntry"></a>
+
+### WrappedSqsClient~SendMessageBatchRequestEntry : <code>object</code>
+**Kind**: inner typedef of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [deduplicationId] | <code>string</code> | [SendMessageCommandInput messageDeduplicationId](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagededuplicationid) |
+| [delaySeconds] | <code>number</code> | Delay in seconds. |
+| [groupId] | <code>string</code> | [SendMessageCommandInput messageGroupId](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagegroupid) |
+| id | <code>string</code> | Message ID. |
+| [systemAttributes] | <code>DecodedMessageAttributes</code> | [SendMessageCommandInput messageSystemAttributes](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagesystemattributes) |
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| [attributes] | <code>DecodedMessageAttributes</code> | [Message attributes.](DecodedMessageAttributes) |
+| body | <code>\*</code> | [SendMessageCommandInput messageBody](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sqs/interfaces/sendmessagecommandinput.html#messagebody). Must be a string or a JSON-serializable object. |
+
 
 ---
 
