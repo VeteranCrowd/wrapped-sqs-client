@@ -23,8 +23,8 @@ This package wraps the [SQS Client - AWS SDK for JavaScript v3](https://docs.aws
                 * [.purgeQueue()](#module_WrappedSqsClient.WrappedSqsClient+purgeQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
                 * [.queueExists(queueName)](#module_WrappedSqsClient.WrappedSqsClient+queueExists) ⇒ <code>Promise.&lt;boolean&gt;</code>
                 * [.receiveMessages([options])](#module_WrappedSqsClient.WrappedSqsClient+receiveMessages) ⇒ <code>Promise.&lt;Array.&lt;{messageId: string, body: any, attributes: Object.&lt;string, string&gt;}&gt;&gt;</code>
-                * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage)
-                * [.sendMessageBatch(entries)](#module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch)
+                * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
+                * [.sendMessageBatch(entries)](#module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
             * _static_
                 * [.decodeMessage([message])](#module_WrappedSqsClient.WrappedSqsClient.decodeMessage) ⇒ <code>object</code>
                 * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
@@ -55,8 +55,8 @@ Wraps an AWS SQS client to provide standard logging & services.
         * [.purgeQueue()](#module_WrappedSqsClient.WrappedSqsClient+purgeQueue) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
         * [.queueExists(queueName)](#module_WrappedSqsClient.WrappedSqsClient+queueExists) ⇒ <code>Promise.&lt;boolean&gt;</code>
         * [.receiveMessages([options])](#module_WrappedSqsClient.WrappedSqsClient+receiveMessages) ⇒ <code>Promise.&lt;Array.&lt;{messageId: string, body: any, attributes: Object.&lt;string, string&gt;}&gt;&gt;</code>
-        * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage)
-        * [.sendMessageBatch(entries)](#module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch)
+        * [.sendMessage(options)](#module_WrappedSqsClient.WrappedSqsClient+sendMessage) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
+        * [.sendMessageBatch(entries)](#module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
     * _static_
         * [.decodeMessage([message])](#module_WrappedSqsClient.WrappedSqsClient.decodeMessage) ⇒ <code>object</code>
         * [.decodeMessageAttributes(attributes)](#module_WrappedSqsClient.WrappedSqsClient.decodeMessageAttributes) ⇒ <code>DecodedMessageAttributes</code>
@@ -175,10 +175,11 @@ Receive queue messages.
 
 <a name="module_WrappedSqsClient.WrappedSqsClient+sendMessage"></a>
 
-#### wrappedSqsClient.sendMessage(options)
+#### wrappedSqsClient.sendMessage(options) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
 Sends a message.
 
 **Kind**: instance method of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient.WrappedSqsClient)  
+**Returns**: <code>Promise.&lt;WrappedSqsClient&gt;</code> - WrappedSqsClient instance.  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -192,10 +193,11 @@ Sends a message.
 
 <a name="module_WrappedSqsClient.WrappedSqsClient+sendMessageBatch"></a>
 
-#### wrappedSqsClient.sendMessageBatch(entries)
-Sends a message.
+#### wrappedSqsClient.sendMessageBatch(entries) ⇒ <code>Promise.&lt;WrappedSqsClient&gt;</code>
+Sends a message batch.
 
 **Kind**: instance method of [<code>WrappedSqsClient</code>](#module_WrappedSqsClient.WrappedSqsClient)  
+**Returns**: <code>Promise.&lt;WrappedSqsClient&gt;</code> - WrappedSqsClient instance.  
 
 | Param | Type | Description |
 | --- | --- | --- |
